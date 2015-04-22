@@ -1,39 +1,39 @@
 <html>
-	<head>
-	</head> 
-	<body>
-	    <script type="text/javascript">
-		    var boardX = 'ABCDEFGH',
-		        boardY = '12345678';
-				
-			var inCoord;
-			inCoord = prompt('Input horse coord (H3, F2, ...) : ');
-			var x = inCoord.substring(0, 1).toUpperCase();
-			var y = inCoord.substring(1, 2).toUpperCase();
-			
-			var z = [];
-			pushValid(z, getMovement(x, y, 1, 2));
-			pushValid(z, getMovement(x, y, 2, 1));
-			pushValid(z, getMovement(x, y, 1, -2));
-			pushValid(z, getMovement(x, y, 2, -1));
-			pushValid(z, getMovement(x, y, -1, 2));
-			pushValid(z, getMovement(x, y, -2, 1));
-			pushValid(z, getMovement(x, y, -1, -2));
-			pushValid(z, getMovement(x, y, -2, -1));
-			console.log(z);
-			
-			function getMovement(x, y, dx, dy){
-				x = String.fromCharCode(x.charCodeAt(0) + dx);
-				x = boardX.indexOf(x) == -1 ? '' : x;
-				y = String.fromCharCode(y.charCodeAt(0) + dy);
-				y = boardY.indexOf(y) == -1 ? '' : y;
-				return x && y ? x + y : '';
-			}
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var boardX = 'ABCDEFGH',
+                boardY = '12345678';
+                
+            var inCoord;
+            inCoord = prompt('Input horse coord (H3, F2, ...) : ');
+            var x = inCoord.substring(0, 1).toUpperCase();
+            var y = inCoord.substring(1, 2).toUpperCase();
+            
+            var z = [];
+            pushValid(z, getMovement(x, y, 1, 2));
+            pushValid(z, getMovement(x, y, 2, 1));
+            pushValid(z, getMovement(x, y, 1, -2));
+            pushValid(z, getMovement(x, y, 2, -1));
+            pushValid(z, getMovement(x, y, -1, 2));
+            pushValid(z, getMovement(x, y, -2, 1));
+            pushValid(z, getMovement(x, y, -1, -2));
+            pushValid(z, getMovement(x, y, -2, -1));
+            console.log(z);
+            
+            function getMovement(x, y, dx, dy){
+                x = String.fromCharCode(x.charCodeAt(0) + dx);
+                x = boardX.indexOf(x) == -1 ? '' : x;
+                y = String.fromCharCode(y.charCodeAt(0) + dy);
+                y = boardY.indexOf(y) == -1 ? '' : y;
+                return x && y ? x + y : '';
+            }
 
-			function pushValid(z, m){
-			    if (m) z.push(m);
-			}
-		</script>
-	</body>
+            function pushValid(z, m){
+                if (m) z.push(m);
+            }
+        </script>
+    </body>
 </html>
 
